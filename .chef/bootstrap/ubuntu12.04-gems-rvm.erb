@@ -1,0 +1,63 @@
+bash -c '
+<% if knife_config[:bootstrap_proxy] -%>
+(
+cat <<'EOP'
+<%= "proxy = #{knife_config[:bootstrap_proxy]}" %>
+EOP
+) > ~/.curlrc
+<% end -%>
+ 
+if [ ! -f /usr/bin/chef-client ]; then
+  apt-get update
+  apt-get install -y build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+  curl -L https://get.rvm.io | bash -s stable --ignore-dotfiles --autolibs=enabled
+  #echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
+  source /etc/profile
+  rvm install 1.9.3 <%= "--proxy #{knife_config[:bootstrap_proxy]}" if knife_config[:bootstrap_proxy] %>
+  rvm use 1.9.3 --default
+fi
+ 
+source /etc/profile
+gem update --system --no-rdoc --no-ri
+gem update --no-rdoc --no-ri
+gem install bundler --no-rdoc --no-ri --verbose
+gem install ohai --no-rdoc --no-ri --verbose
+gem install chef --no-rdoc --no-ri --verbose <%= bootstrap_version_string %>
+if [ -f /usr/bin/chef-client ]; then
+  rm -f /usr/bin/chef-client
+fi
+ln -nfs $(which chef-client) /usr/bin/chef-client
+ 
+mkdir -p /etc/chef
+ 
+(
+cat <<'EOP'
+<%= validation_key %>
+EOP
+) > /tmp/validation.pem
+awk NF /tmp/validation.pem > /etc/chef/validation.pem
+rm /tmp/validation.pem
+ 
+<% if @chef_config[:encrypted_data_bag_secret] -%>
+(
+cat <<'EOP'
+<%= encrypted_data_bag_secret %>
+EOP
+) > /tmp/encrypted_data_bag_secret
+awk NF /tmp/encrypted_data_bag_secret > /etc/chef/encrypted_data_bag_secret
+rm /tmp/encrypted_data_bag_secret
+<% end -%>
+ 
+(
+cat <<'EOP'
+<%= config_content %>
+EOP
+) > /etc/chef/client.rb
+ 
+(
+cat <<'EOP'
+<%= { "run_list" => @run_list }.to_json %>
+EOP
+) > /etc/chef/first-boot.json
+ 
+<%= start_chef %>'

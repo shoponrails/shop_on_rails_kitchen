@@ -1,0 +1,58 @@
+{
+    "name": "shop_on_rails",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "The ShopOnRails Demo Site",
+    "default_attributes": {
+        "hostname": "localhost",
+        "user": "deployer",
+        "user_group": "users",
+        "deploy_user": {
+            "encoded_password": "$1$F63Ry0wG$lZV4BMlnlCQxmvnvMwlbS0"
+        },
+        "deploy_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpQIBAAKCAQEA6Lbo9oMw64hHdiTbDsaKYq9yR8Avm3AVQtF3oj/DS7PJc1Oc\nwDAZ14nnwzUJHMoYjHId2ywpiD2uyltQksC1RG5Wh+0p5jBvHU8aQ0gpwCVohD5y\nbZSLjg/JryoYa/ZC86l+ki+WuZpkiEwVa7h7XTF3fJ2mCVcyg5ziAbc4lPnSJR4w\nSUw0CQiRHsA+wJIKNWuMa8yAy2el4g8T93zd0kPe50mkb2iR94D2nJdQOmh96oIC\nebvVwbtPxDDNpt2zVcYKOYCGhW1jrRpAlnfuM2ECgGwcx3xh8vQhXi5vL0KyDjEj\nSMmhwaIMUXMpr4MehlYfQ50sztlOvrIf9luogQIDAQABAoIBAQCaBt6AsuqBKm0q\nHFDFIdHcaYV5ShH4jqHz3NKTGCL6CyBN7cx1RCEGkSdOA99pJ7ZB1xI9y6gdnb3/\n/5p/137isSkixG2UBwC0ZHPcjnnbzKa1yONR9hy8RWTXRERvyModnlTBCzB23mKl\n973B05QLZb9RQsLvscAkboUEX7Han4/wEiqMhk68wHowm5CxXDaT0vKxQ3aVFSOZ\nCOZ6Hp8sAV+fCcOme/WoM9IcYs5r+f82iU/usUZNtqR3DxmMzq07h/5tRt7mX5eH\nMGzBdquYp5s21nHDBQvjuA+Dt55fsZiNNBziU6RaAbBUEdXc7HJPy/dcPRpTXf4L\nUBHzgwUFAoGBAP97Dqf/XbFU+nFV8PHFrugM0Lx5AjZWYGEXoHCZ7SgXgCIU4IZS\nppldXXGWbK1C77rGXfgMrD07WatT/nRMOdLN/MeNiAepR6wyLxfb6BlVKHnk7e7D\nw1CjLs3ASSUbheswqH8KvVWr5E7Ee4XLLxHETgEA/L5UTcjw2nEPyBZ3AoGBAOkw\nAY2qx7kFzInVFjtkrTQilncvVdUmnRGWECRsum/R1lMK4dPujKFbC9iLW40ntcqF\nZ4M6k3/0vo7wog29z82z3vGWCb1Jg/xiYqPnnP33RELbopQC/IBiQuKHYrf3O27G\n8B3JReNp5NfqSObXvPIxV8duvU+1ym7PH10/Id7HAoGBAIIUzSSa8MCvDQmSAamI\nxwLeK5YbYxX5qv8kwYszxL4KITK5QI0EHlGuaTrBpboef+Owxv3argRLaN/EV6Yt\nfa+pNFEC7kVAWv8BWlsinC3x3zcZalCNGrC/NcCLbHLZbbmPv+tXs4mgiRHWFzLL\nfr7kHfeC4i2izSxH/mFc8LsHAoGAcuFqsn+De7zGotTu6f3Ucs3jcP5J/APU99gF\nRdynEPXA8BJ5ZS6t68RuFpW5WdZJcme8smMGTdCmnMciH0D3AnFuEXkIfU+djZZu\n4C74IgpSf9myw9agzSMbrnxifx13E0FBBHunSb1et5y9o7R/apYyl5cP/xghjevO\nmOLEbfsCgYEAnVpm5yM+ULzoMOcW9xl+nusYVEz+7Rdwm/LqyXz0y101FvhRq6iP\nZ3eWSM7DA/4kT7sj1Y2hcqjNKECrMtw0AhVyYfKYDdVs6ZuKUQPzsZHC2kXUxu9/\nQOEKbXbOZhKZEESzyu8CVaKBYHghWNxwfTARhOJRcGNdjObUJC0ekME=\n-----END RSA PRIVATE KEY-----\n",
+        "rvm":{
+            "user_installs":[
+                {
+                    "user": "deployer",
+                    "default_ruby": "1.9.3",
+                    "rubies": ["1.9.3"]
+                }
+            ]
+        },
+        "mysql":{
+            "server_root_password": "1234567",
+            "server_debian_password": "654321",
+            "server_repl_password": "345678",
+            "user_name": "shoponrails",
+            "user_password": "abcdef"
+        },
+        "database":{
+            "adapter": "mysql2",
+            "database": "shop_on_rails_db",
+            "host": "localhost",
+            "username": "shoponrails",
+            "password": "abcdef"
+        },
+        "dropbox":{
+            "app_key": "uv5n1r3onw2qfpj",
+            "app_secret": "ktzu130axnsgkbp",
+            "token": "st17zb6b3hdecede",
+            "secret": "70j5m2bdj3h95cu"
+        },
+        "app_name": "shop_on_rails_app",
+        "chef_environment": "production",
+        "environment": "production",
+        "app_repo": "https://github.com/shoponrails/shop_on_rails_demo.git",
+        "branch": "master",
+        "nginx_port": 80,
+        "server_name": "demo.localhost",
+        "dropbox_import": true,
+        "generate_demo_data": true
+    },
+    "run_list": [
+        "recipe[shop_on_rails::default]",
+        "recipe[shop_on_rails::deploy]",
+        "recipe[shop_on_rails::finish]"
+    ]
+}

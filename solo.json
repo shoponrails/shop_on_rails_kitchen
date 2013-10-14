@@ -1,0 +1,5 @@
+{
+    "run_list": [
+        "role[shop_on_rails]"
+    ]
+}

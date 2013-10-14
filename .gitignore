@@ -1,0 +1,17 @@
+.rake_test_cache
+
+###
+# Ignore Chef key files and secrets
+###
+.chef/*.pem
+.chef/encrypted_data_bag_secret
+.chef/knife.rb
+
+.vagrant*
+.vagrant/*
+*.box
+.idea
+._idea
+.ruby-gemset
+.ruby-version
+config/rake.rb

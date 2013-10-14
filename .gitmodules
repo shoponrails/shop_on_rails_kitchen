@@ -1,0 +1,42 @@
+[submodule "cookbooks/rvm"]
+	path = cookbooks/rvm
+	url = https://github.com/fnichol/chef-rvm.git
+[submodule "cookbooks/apache2"]
+	path = cookbooks/apache2
+	url = https://github.com/opscode-cookbooks/apache2.git
+[submodule "cookbooks/application_ruby"]
+	path = cookbooks/application_ruby
+	url = https://github.com/opscode-cookbooks/application_ruby.git
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential.git
+[submodule "cookbooks/mysql"]
+	path = cookbooks/mysql
+	url = https://github.com/opscode-cookbooks/mysql.git
+[submodule "cookbooks/nginx"]
+	path = cookbooks/nginx
+	url = https://github.com/opscode-cookbooks/nginx.git
+[submodule "cookbooks/openssl"]
+	path = cookbooks/openssl
+	url = https://github.com/opscode-cookbooks/openssl.git
+[submodule "cookbooks/passenger_apache2"]
+	path = cookbooks/passenger_apache2
+	url = https://github.com/opscode-cookbooks/passenger_apache2.git
+[submodule "cookbooks/unicorn"]
+	path = cookbooks/unicorn
+	url = https://github.com/opscode-cookbooks/unicorn.git
+[submodule "cookbooks/users"]
+	path = cookbooks/users
+	url = https://github.com/opscode-cookbooks/users.git
+[submodule "cookbooks/runit"]
+	path = cookbooks/runit
+	url = https://github.com/opscode-cookbooks/runit.git
+[submodule "cookbooks/logrotate"]
+	path = cookbooks/logrotate
+	url = https://github.com/opscode-cookbooks/logrotate.git
+[submodule "cookbooks/yum"]
+	path = cookbooks/yum
+	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "cookbooks/chef_gem"]
+	path = cookbooks/chef_gem
+	url = https://github.com/hw-cookbooks/chef_gem.git
