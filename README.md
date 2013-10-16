@@ -16,10 +16,10 @@ For this case you must do the following steps:
     ssh user@host
     sudo su -
     apt-get update && apt-get -y upgrade
-    apt-get -y install ruby1.9.1 ruby1.9.1-dev git-core
-    gem install chef
+    apt-get -y git-core
     git clone https://github.com/shoponrails/shop_on_rails_kitchen.git /chef
     cd /chef
+    opscode-server-bootstrap.sh
     git submodule init
     git submodule update
     shop_on_rails_solo.sh
