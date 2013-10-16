@@ -13,16 +13,16 @@ There are a few variants how you can use ShopOnRails Kitchen.
 For this case you must do the following steps:
 
 ```bash
-    ssh user@host
-    sudo su -
-    apt-get update && apt-get -y upgrade
-    apt-get -y git-core
-    git clone https://github.com/shoponrails/shop_on_rails_kitchen.git /chef
-    cd /chef
-    opscode-server-bootstrap.sh
-    git submodule init
-    git submodule update
-    shop_on_rails_solo.sh
+    # ssh user@host
+    # sudo su -
+    # apt-get update && apt-get -y upgrade
+    # apt-get -y git-core
+    # git clone https://github.com/shoponrails/shop_on_rails_kitchen.git /chef
+    # cd /chef
+    # ./chef-bootstrap.sh
+    # git submodule init
+    # git submodule update
+    # ./shop_on_rails_solo.sh
 ```
 
 ### * Variant 2: Running ShopOnRails site on VirtualBox instance (for Windows/MacOS/Linux users).
@@ -62,6 +62,13 @@ Path to application is `/srv/shop_on_rails_app`
 * download zip from https://github.com/shoponrails/shop_on_rails_kitchen/archive/master.zip and extract to `c:\kitchen`
 * next: `cd c:/kitchen`
 * `bundle.bat install`
+* `vagrant.bat up solo`
+* `vagrant.bat ssh solo` - login to VM
+* `sudo su -`
+* `apt-get update && apt-get -y upgrade`
+* `apt-get -y git-core`
+* `git submodule init && git submodule update`
+* `/chef/shop_on_rails_solo.sh`
 
 
 ### Customization
