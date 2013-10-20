@@ -16,7 +16,7 @@ For this case you must do the following steps:
     # ssh user@host
     # sudo su -
     # apt-get update && apt-get -y upgrade
-    # apt-get -y git-core
+    # apt-get -y install git-core
     # git clone https://github.com/shoponrails/shop_on_rails_kitchen.git /chef
     # cd /chef
     # ./chef-bootstrap.sh
