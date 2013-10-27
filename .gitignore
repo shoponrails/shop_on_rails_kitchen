@@ -12,6 +12,6 @@
 *.box
 .idea
 ._idea
-.ruby-gemset
-.ruby-version
+/.ruby-gemset
+/.ruby-version
 config/rake.rb
